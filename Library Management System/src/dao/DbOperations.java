@@ -356,7 +356,12 @@ public class DbOperations {
            
             
             word=word.toUpperCase();
-           String sql= "SELECT book_id,book_name,writers_name,department_code,amount FROM `booklist` WHERE visibility='YES' and "+searchType+" LIKE '"+word+"%';";
+           String sql;
+            if(searchType.equals("book_id")){
+                sql= "SELECT book_id,book_name,writers_name,department_code,amount FROM booklist WHERE visibility='YES' and "+searchType+" LIKE '"+word+"';";
+            }else{
+                sql= "SELECT book_id,book_name,writers_name,department_code,amount FROM booklist WHERE visibility='YES' and "+searchType+" LIKE '"+word+"%';";
+            }
             // Execute the query to retrieve all data from the users table
             
 
