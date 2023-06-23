@@ -314,8 +314,8 @@ public class SignUp extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_SignUpBackActionPerformed
  private void addUser(String id, String firstName, String lastName, String phoneNo, String email, String address, String password,String department) throws ClassNotFoundException {
-        String insertUser = "INSERT INTO studentlist (student_id, first_name, last_name, phone_no, email_address, address, password,due,department_code) " +
-                "VALUES (" + id + ", '" + firstName + "', '" + lastName + "', '" + phoneNo + "', '" + email + "', '" + address + "', '" + password + "',0,'" + department + "')";
+        String insertUser = "INSERT INTO studentlist (student_id, first_name, last_name, phone_no, email_address, address, password,department_code) " +
+                "VALUES (" + id + ", '" + firstName + "', '" + lastName + "', '" + phoneNo + "', '" + email + "', '" + address + "', '" + password + "','" + department + "')";
         if(DbOperations.setDataOrDelete(insertUser,"Successfully signed up") ){
            int idd;
             idd = Integer.parseInt(id);
